@@ -2358,6 +2358,7 @@ function renderStaticContent(){
 
   document.getElementById("homeImpact").innerHTML = collections.projects.slice(0,3).map(projectCardHTML).join("");
   document.getElementById("impactFull").innerHTML = collections.projects.map(projectCardHTML).join("");
+  refreshReveal();
 }
 
 function renderPrograms(){
@@ -2369,6 +2370,7 @@ function renderPrograms(){
   var featured = og[0];
   document.getElementById("homeFeaturedProgram").innerHTML = featured ? eventCardHTML(featured) : emptyStateHTML("No ongoing program right now", "Check back soon, or follow our Health Hub for updates.", "compass");
   document.getElementById("homeUpcoming").innerHTML = up.length ? up.slice(0,1).map(eventCardHTML).join("") : emptyStateHTML("No upcoming events yet", "New events will be posted here as soon as they're confirmed.", "calendar");
+  refreshReveal();
 }
 
 function renderHealthHub(searchQ, filterCat){
@@ -2402,6 +2404,7 @@ function renderHealthHub(searchQ, filterCat){
   document.getElementById("dashArticles").innerHTML = collections.articles.length
     ? collections.articles.slice(0,3).map(function(a){ return contentCardHTML(a,"article"); }).join("")
     : emptyStateHTML("No articles published yet", "New health articles will appear here as soon as they're published.", "book");
+  refreshReveal();
 }
 
 document.getElementById("hubSearch").addEventListener("input", function(){ renderHealthHub(this.value, document.getElementById("hubFilter").value); });
