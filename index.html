@@ -143,8 +143,8 @@ h4,.h4{font-family:var(--font-body);font-weight:700;line-height:1.3;color:var(--
 /* ============================================================
    5. HEADER / NAV
 ============================================================ */
-.site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line-soft);}
-.connection-banner{background:#7A2E22;color:#fff;font-size:13px;text-align:center;padding:10px 16px;line-height:1.4;}
+.site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line-soft);padding-top:env(safe-area-inset-top);}
+.connection-banner{background:#7A2E22;color:#fff;font-size:13px;text-align:center;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;line-height:1.4;}
 .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:10px;}
 .brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1 1 auto;overflow:hidden;}
 .brand-logo-img{height:32px;width:auto;display:block;flex-shrink:0;}
@@ -191,7 +191,7 @@ h4,.h4{font-family:var(--font-body);font-weight:700;line-height:1.3;color:var(--
 .mobile-menu.open{visibility:visible;}
 .mobile-menu-scrim{position:absolute;inset:0;background:rgba(10,20,33,.45);opacity:0;transition:opacity var(--dur) var(--ease);}
 .mobile-menu.open .mobile-menu-scrim{opacity:1;}
-.mobile-menu-panel{position:absolute;top:0;right:0;bottom:0;width:min(360px,86vw);background:#fff;padding:20px;overflow-y:auto;transform:translateX(100%);transition:transform var(--dur) var(--ease);display:flex;flex-direction:column;}
+.mobile-menu-panel{position:absolute;top:0;right:0;bottom:0;width:min(360px,86vw);background:#fff;padding:20px;padding-top:calc(20px + env(safe-area-inset-top));padding-bottom:calc(20px + env(safe-area-inset-bottom));overflow-y:auto;transform:translateX(100%);transition:transform var(--dur) var(--ease);display:flex;flex-direction:column;}
 .mobile-menu.open .mobile-menu-panel{transform:translateX(0);}
 .mobile-menu-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
 .mobile-nav-group{margin-top:6px;}
@@ -340,10 +340,10 @@ h4,.h4{font-family:var(--font-body);font-weight:700;line-height:1.3;color:var(--
 .auth-foot button{color:var(--green-700);font-weight:600;background:none;border:0;cursor:pointer;}
 .auth-note{font-size:12px;color:var(--ink-500);background:var(--sand-50);border:1px solid var(--line-soft);border-radius:var(--radius-sm);padding:10px 12px;margin-top:16px;}
 
-.whatsapp-float{position:fixed;right:18px;bottom:18px;width:54px;height:54px;border-radius:50%;background:var(--green-600);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(19,74,54,.38);z-index:150;transition:transform var(--dur) var(--ease),background var(--dur) var(--ease);}
+.whatsapp-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:54px;height:54px;border-radius:50%;background:var(--green-600);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(19,74,54,.38);z-index:150;transition:transform var(--dur) var(--ease),background var(--dur) var(--ease);}
 .whatsapp-float:hover{background:var(--green-700);transform:translateY(-2px);}
 .whatsapp-float .icon{width:26px;height:26px;stroke:#fff;}
-.toast-stack{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:600;display:flex;flex-direction:column;gap:8px;width:min(380px,92vw);}
+.toast-stack{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:600;display:flex;flex-direction:column;gap:8px;width:min(380px,92vw);}
 .toast{background:var(--navy-900);color:#fff;padding:13px 16px;border-radius:var(--radius-sm);font-size:13.5px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow-md);animation:toastIn .25s var(--ease);}
 .toast .icon{color:#8FE0BE;width:18px;height:18px;flex-shrink:0;}
 @keyframes toastIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
